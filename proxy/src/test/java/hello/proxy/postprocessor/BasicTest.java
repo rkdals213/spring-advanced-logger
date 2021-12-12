@@ -9,6 +9,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class BasicTest {
 
     @Test
@@ -20,7 +22,7 @@ public class BasicTest {
         a.helloA();
 
         //B는 빈으로 등록되지 않는다.
-        Assertions.assertThrows(NoSuchBeanDefinitionException.class, () -> applicationContext.getBean(B.class));
+        assertThrows(NoSuchBeanDefinitionException.class, () -> applicationContext.getBean(B.class));
     }
 
     @Slf4j
