@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.*;
 @Aspect
 public class AspectV6Advice {
 
-//    @Around("hello.aop.order.aop.Pointcuts.orderAndService()")
+    @Around("hello.aop.order.aop.Pointcuts.orderAndService()")
     public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable {
 
         try {
